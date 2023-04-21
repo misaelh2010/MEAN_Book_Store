@@ -33,3 +33,12 @@ app.use(cors());
 //I am going to make a static path 
 app.use(express.static(path.join(__dirname, 'dist/Bookstore')));
 
+//API 
+app.use('/api', bookRoute);
+
+//created port
+const port = process.env.port || 8000;
+app.listen(port, () => {
+    console.log('Listening on Port:' + port);
+
+})
