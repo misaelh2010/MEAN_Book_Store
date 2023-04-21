@@ -19,3 +19,17 @@ mongoose.connect(mongoDB.bookstore, {
         console.log('Database error: ' + error)
     }
 )
+
+//im going to add the port and server
+const bookRoute = require("./backendNode/routes/book.routes");
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false;
+}));
+
+app.use(cors());
+
+//I am going to make a static path 
+app.use(express.static(path.join(__dirname, 'dist/Bookstore')));
+
