@@ -14,4 +14,8 @@ mongoose.connect(mongoDB.bookstore, {
 
 }).then(() => {
     console.log("Database connected successfully")
-})
+},
+    error => {
+        console.log('Database error: ' + error)
+    }
+)
